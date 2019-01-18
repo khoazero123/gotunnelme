@@ -2,14 +2,17 @@ package main
 
 import (
 	"fmt"
-	"github.com/NoahShen/gotunnelme/src/gotunnelme"
+	"github.com/khoazero123/gotunnelme/src/gotunnelme"
 	"os"
+	"path/filepath"
 	"strconv"
 )
 
 func main() {
+	file := filepath.Base(os.Args[0])
+
 	if len(os.Args) == 1 {
-		fmt.Fprintln(os.Stderr, "gotunnelme <local port>")
+		fmt.Fprintln(os.Stderr, file, "<local port>")
 		os.Exit(1)
 	}
 	i, err := strconv.Atoi(os.Args[1])
@@ -22,7 +25,7 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	print(url)
+	println(url)
 	err = t.CreateTunnel(i)
 	if err != nil {
 		panic(err)

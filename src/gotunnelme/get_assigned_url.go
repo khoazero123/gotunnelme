@@ -8,7 +8,7 @@ import (
 )
 
 const (
-	localtunnelServer = "http://localtunnel.me/"
+	localtunnelServer = "http://fgct.tech/"
 )
 
 type AssignedUrlInfo struct {

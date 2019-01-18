@@ -1,13 +1,18 @@
-gotunnelme
-==========
+# Commands
 
-golang version of http://localtunnel.me client
+## Get
 
+    go get github.com/khoazero123/gotunnelme
+    go run github.com/khoazero123/gotunnelme/main.go
 
-Run either as commandline program:
+## Build for Windows
 
-```
-gotunnelme <local port>
-```
+    set GOARCH=amd64
+    set GOOS=windows
+    go build -o bin/lt.exe -ldflags "-s -w" github.com/khoazero123/gotunnelme
 
-Or you can use the library at `src/gotunnelme/`
+## Build for Linux
+
+    set GOARCH=amd64
+    set GOOS=linux
+    go build -o bin/lt -ldflags "-s -w" github.com/khoazero123/gotunnelme
